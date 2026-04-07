@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devesh Distributors</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    background:#f2f6ff;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#0b4da2,#1e90ff);
+    color:white;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+header img{
+    width:120px;
+    background:white;
+    padding:6px;
+    border-radius:10px;
+}
+
+header h1{
+    font-size:32px;
+}
+
+.hero{
+background:linear-gradient(rgba(11,77,162,0.7),rgba(11,77,162,0.7)),
+url('https://images.unsplash.com/photo-1580281658629-3a6a0c0c6d7a');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h2{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:20px;
+background:white;
+color:#0b4da2;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.info{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    background:white;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.info div{
+    margin:6px 0;
+}
+
+.info i{
+    color:#0b4da2;
+    margin-right:6px;
+}
+
+.info a{
+    text-decoration:none;
+    color:#0b4da2;
+    font-weight:600;
+}
+
+.info a:hover{
+    text-decoration:underline;
+}
+
+
+.stats{
+display:flex;
+justify-content:space-around;
+background:#0b4da2;
+color:white;
+padding:40px;
+text-align:center;
+flex-wrap:wrap;
+}
+
+.stat{
+margin:10px;
+}
+
+.stat h3{
+font-size:35px;
+}
+
+
+.companies{
+    padding:30px;
+}
+
+.companies h2{
+    text-align:center;
+    color:#0b4da2;
+    margin-bottom:15px;
+}
+
+.search-bar{
+    width:100%;
+    max-width:400px;
+    display:block;
+    margin:0 auto 25px auto;
+    padding:12px 15px;
+    border-radius:30px;
+    border:2px solid #0b4da2;
+    outline:none;
+    font-size:16px;
+}
+
+.company-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
+}
+
+.company{
+    padding:15px;
+    border-radius:12px;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.company:hover{
+    transform:translateY(-5px) scale(1.04);
+}
+
+.c5{background:#16a085;}
+.c3{background:#2980b9;}
+.c1{background:#8e44ad;}
+.c2{background:#d35400;}
+.c4{background:#c0392b;}
+
+.products{
+    max-height:0;
+    overflow:hidden;
+    background:white;
+    border-radius:10px;
+    margin-top:8px;
+    padding:0 15px;
+    transition:max-height 0.4s ease;
+}
+
+.products ul{
+    padding:10px 0;
+}
+
+.products li{
+    margin:5px 0;
+}
+
+.about{
+    padding:60px 20px;
+    text-align:center;
+    background:#ffffff;
+}
+
+.about h2{
+    font-size:32px;
+    color:#0b4da2;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.services{
+    padding:60px 20px;
+    background:#f2f6ff;
+    text-align:center;
+}
+
+.services h2{
+    font-size:32px;
+    color:#0b4da2;
+    margin-bottom:40px;
+}
+
+.service-box{
+    background:white;
+    padding:25px;
+    margin:15px auto;
+    max-width:600px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-5px);
+}
+
+.service-box h3{
+    color:#1e3c72;
+    margin-bottom:10px;
+}
+
+.company.active + .products{
+    max-height:400px;
+    overflow-y:auto;
+    padding:10px 15px;
+}
+
+.gallery{
+    padding:30px;
+}
+
+.gallery h2{
+    text-align:center;
+    color:#0b4da2;
+    margin-bottom:20px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+.map{
+    padding:30px;
+}
+
+iframe{
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact{
+padding:60px 20%;
+text-align:center;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input, textarea{
+margin:10px 0;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+form button{
+background:#0a4da3;
+color:white;
+padding:10px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+
+footer{
+    background:#0b4da2;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+    font-size:14px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+@media(max-width:600px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="C:\Users\akash\OneDrive\Apps\Desktop\harshal\logo.png" alt="Logo">
+    <div>
+        <h1>Devesh Distributors</h1>
+        <p>“Quality medicines. Trusted distribution. Committed to healthcare.” “Serving healthcare with integrity, quality, and timely delivery.”</p>
+        <p><b>Owner:</b> Mr. Manoj Borse</p>
+    </div>
+</header>
+
+<section class="info">
+    <div>📍 Chalisgaon Bus Stand, Near Bank of Maharashtra</div>
+    <div>📞 +91 87885 09990</div>
+    <div>
+        <i class="fa-solid fa-envelope"></i>
+        <a
+        href="mailto:deveshdistributorschalisgaon69@gmail.com">
+   devheshdistributorschalisgaon69@gmail.com</a>
+</div>
+    <div>⏰ Mon – Sat | 9:00 AM – 8:30 PM</div>
+</section>
+
+
+<section class="hero">
+<h2>Trusted Pharmaceutical Distribution</h2>
+<p>Delivering Quality Medicines Across Healthcare Networks</p>
+<a href="#contact" class="hero-btn">Contact Us</a>
+</section>
+
+
+<section class="stats">
+<div class="stat">
+<h3>50+</h3>
+<p>Pharma Companies</p>
+</div>
+
+<div class="stat">
+<h3>1000+</h3>
+<p>Products</p>
+</div>
+
+<div class="stat">
+<h3>200+</h3>
+<p>Doctors Served</p>
+</div>
+
+<div class="stat">
+<h3>10+</h3>
+<p>Years Experience</p>
+</div>
+</section>
+
+
+
+<section class="companies">
+<h2>Associated Companies</h2>
+<input type="text" id="searchInput" placeholder="🔍 Search Company/Products..." class="search-bar">
+<div class="company-grid">
+
+<!-- MacLeods -->
+<div>
+<div class="company c1">MacLeods Pharmaceuticals Limited</div>
+<div class="products">
+<ul>
+<li>Panderm++ crem(Dermatological/Antibiotic)</li>
+<li>Thyrox (Thyroid Hormone Replacement)</li>
+<li>IT-Mac (Antifungal)</li>
+<li>Omnacortil (Prednisolone - Anti-inflammatory)</li>
+<li>Meromac (Meropenem - Antibiotic)</li>
+<li>Geminor-M (Antidiabetic)</li>
+<li>Defcort (Deflazacort - Corticosteroid)</li>
+<li>Sensiclav (Antibiotic)</li>
+<li>Olmesar (Antihypertensive)</li>
+<li>Megalis (Tadalafil - Erectile Dysfunction)</li>
+<li>Rabemac-DSR (Gastrointestinal)</li>
+<li>Tazomac (Antibiotic)</li>
+<li>Cefolac (Antibiotic)</li>
+<li>Bio-D3 Plus/Max/Strong (Nutritional Supplement)</li>
+<li>Macpod (Antibiotic)</li>
+<li>Trenaxa (Tranexamic Acid - Anti-fibrinolytic)</li>
+<li>Zedocef (Antibiotic)</li>
+<li>Polyclav (Antibiotic)</li>
+<li>Budetrol (Respiratory/Asthma)</li>
+<li>Amlovas-AT (Cardiovascular/Hypertension)</li>
+</ul>
+</div>
+</div>
+
+<!-- Cipla -->
+<div>
+<div class="company c2">Cipla Limited</div>
+<div class="products">
+<ul>
+<li>Foracort (Budesonide + Formoterol Fumarate) – Respiratory</li>
+<li>Dytor Plus (Spironolactone + Torasemide) – Cardiovascular/Diuretic</li>
+<li>Ibugesic Plus (Ibuprofen + Paracetamol) – Analgesic</li>
+<li>Omnigel (Diclofenac) – Topical Pain Relief</li>
+<li>Tugain (Minoxidil) – Topical hair loss solution</li>
+<li>Maxirich (Multivitamin & Minerals) – Consumer Health</li>
+<li>Nicotex (Nicotine) – Smoking Cessation</li>
+<li>Naselin (Nasal Spray) – Decongestant</li>
+<li>Asthalin (Salbutamol) – Respiratory</li>
+<li>Amlip (Amlodipine) – Cardiovascular</li>
+<li>Atorlip (Atorvastatin) – Cholesterol Management</li>
+<li>Acivir (Acyclovir) – Anti-viral</li>
+<li>Azomycin (Azithromycin) – Antibiotic</li>
+<li>Omniclav (Amoxycillin + Potassium Clavulanate) – Antibiotic</li>
+<li>Ciplox (Ciprofloxacin) – Antibiotic</li>
+<li>Rabesec (Rabeprazole) – Gastrointestinal</li>
+<li>Foracne (Acne Treatment) – Dermatology</li>
+<li>Cipmolnu (Molnupiravir) – COVID-19 Treatment</li>
+<li>8X Shampoo (Anti-dandruff) – Dermatology</li>
+<li>Endura Mass (Nutritional Supplement) – Consumer Health</li>
+</ul>
+</div>
+</div>
+
+<!-- Alkem -->
+<div>
+<div class="company c1">Alkem Laboratories Limited</div>
+<div class="products">
+<ul>
+<li>Clavam (Antibiotic: Amoxicillin + Potassium Clavulanate)</li>
+<li>Pan (Gastric: Pantoprazole)</li>
+<li>Pan-D (Gastric: Pantoprazole + Domperidone)</li>
+<li>Taxim-O (Antibiotic: Cefixime)</li>
+<li>A to Z NS (Nutraceutical: Multivitamin/Minerals)</li>
+<li>Xone (Antibiotic: Ceftriaxone)</li>
+<li>Sumo (Pain/Fever: Nimesulide + Paracetamol)</li>
+<li>Omee (Gastric: Omeprazole)</li>
+<li>Gemcal (Supplement: Calcium + Vitamin D3)</li>
+<li>Aldigesic (Pain: Aceclofenac + Paracetamol)</li>
+<li>Glucoryl (Anti-diabetic: Glimepiride)</li>
+<li>Dapanorm (Anti-diabetic: Dapagliflozin)</li>
+<li>Alkof (Cough Syrup)</li>
+<li>Uprise-D3 (Vitamin D3 Supplement)</li>
+<li>Clindac A (Acne Treatment: Clindamycin)</li>
+<li>Tegliptin (Anti-diabetic: Teneligliptin)</li>
+<li>L-cetiriz (Antihistamine: Levocetirizine)</li>
+<li>Minokem (Hair Care: Minoxidil)</li>
+<li>Cilnicem (Cardiac: Cilnidipine)</li>
+<li>Ketokem (Anti-dandruff Shampoo)</li>
+</ul>
+</div>
+</div>
+
+<!--Intellect-->
+<div>
+<div class="company c2">Intellect Life Sciences Limited</div>
+<div class="products">
+<ul>
+<li>Acillect MPS Suspension – Antibiotic combination for bacterial infection </li>
+<li>Acillect Tablets – Antibiotic formulation for systemic infections </li>
+<li>Artifast Injection – Injectable antibiotic product </li>
+<li>Azinew Suspensions & Tablets – Antibiotic/supplements for infection control</li> 
+<li>Cefimun Tablets (250/500 mg) – Cephalosporin antibiotic tablets </li>
+<li>Ceflect Injection (500/1000 mg) – Broad-spectrum injectable antibiotic</li> 
+<li>Cefnorm + Tablets & Dry Syrup – Antibiotic combo tablets/syrup </li>
+<li>Clavilect-A (Tablets & Dry Syrup) – Antibiotic product for bacterial infections</li> 
+<li>Coldciz Products (Tablets, Syrup, Nasal Drops) – Cold & flu relief formulations </li>
+<li>Doxseal (Dry Syrup/Tablets) – Antibiotic combination product </li>
+<li>Fevawin Suspension / Tablets – Fever / symptomatic relief </li>
+<li>ILS-D3 (Sachets/Drops) – Vitamin D3 supplement </li>
+<li>Intizox Gel / Tablets – Pain relief / topical product</li> 
+<li>Iverbet (Suspension / Tablets) – Ivermectin-based therapy </li>
+<li>Levotriz / Levotriz-M Tablets & Syrup – Anti-allergy/antihistamine products</li> 
+<li>Mefnid Tablets – NSAID for pain/inflammation</li>
+<li>Nuzink Syrup – Multivitamin/mineral syrup </li>
+<li>Piptason Injection – Injectable antibiotic/antiprotozoal product</li> 
+<li>Rabilect (Tablets & Capsules) – Various therapeutic tablets </li>
+<li>Vitallect (Capsules/Drops/Syrup) – Nutritional supplement range</li>
+</ul>
+</div>
+</div>
+
+<!-- Ipca -->
+<div>
+<div class="company c1">Ipca Laboratories Limited</div>
+<div class="products">
+<ul>
+<li>IPCA MMF 500 Tablet – Immunosuppressant tablet for transplant patients</li>
+<li>HCQS 200 mg Tablet – Hydroxychloroquine sulphate antimalarial drug</li>
+<li>Saaz DS Tablet – Combination therapy tablet</li>
+<li>Xtor 10 mg Tablet – Pain management / NSAID</li>
+<li>Keraglo AD Shampoo – Hair care shampoo</li>
+<li>CTD 6.25 mg Tablet – Cardio drug</li>
+<li>Kerablak Tablet – Hair health supplement</li>
+<li>Ramcor 10 mg Capsule – Ramipril for blood pressure</li>
+<li>Acutret 20 mg Capsule – Acne treatment / dermatology</li>
+<li>Glyree MV 2 mg Tablet – Antidiabetic medicine</li>
+<li>Acne UV SPF 30 Gel – Sunscreen gel</li>
+<li>Keraglo AD Lotion – Hair care lotion</li>
+<li>Mono Isordil 20 mg Tablet – Cardiovascular drug</li>
+<li>Halotop S Ointment – Topical skin ointment</li>
+<li>Lacsoft Cream – Skin care cream</li>
+<li>Cutinorm Cleansing Bath Bar – Skin cleansing soap</li>
+<li>Aquasurge Eye Drops – Ophthalmic drops</li>
+<li>Cutirinz Foaming Face Wash – Facewash</li>
+<li>Azifast Gel – Topical antibacterial gel</li>
+<li>Pirament Syrup – Antacid digestive</li>
+</ul>
+</div>
+</div>
+
+<!-- Dr.Reddy's -->
+<div>
+<div class="company c2">Dr.Reddy's Laboratories Limited</div>
+<div class="products">
+<ul>
+<li>ATOCOR 10 Tablet – lipid-lowering statin medicine</li>
+<li>ATARAX 10mg Tablet – anti-allergic medicine</li>
+<li>ATARAX Anti-itch Lotion – anti-itch medicine</li>
+<li>BECELAC FORTE Capsule – probiotic supplement</li>
+<li>BETACON XL 25 Tablet – beta-blocker medicine</li>
+<li>BROZEDEX LS Syrup – cough syrup</li>
+<li>BROZEDEX SF Syrup – sugar-free cough syrup</li>
+<li>CLAMP 625 Tablet – antibiotic medicine</li>
+<li>CLAMP Drops – pediatric antibiotic drops</li>
+<li>DAPLO 5 Tablet – anti-diabetic medicine</li>
+<li>DOLOGEL 15gm – oral pain relief gel</li>
+<li>GLIMY M 1 Tablet – anti-diabetic combination</li>
+<li>GRIS ODT 250 Tablet – antifungal medicine</li>
+<li>KETOROL DT Tablet – pain relief medicine</li>
+<li>OLMESAR 20 Tablet – antihypertensive medicine</li>
+<li>TELMA 40 Tablet – antihypertensive medicine</li>
+<li>PAN 40 Tablet – anti-ulcer medicine</li>
+<li>ZEMPRED 8 Tablet – corticosteroid medicine</li>
+<li>CANDID Cream – antifungal cream</li>
+<li>RANTAC 150 Tablet – anti-acidity medicine</li>
+</ul>
+</div>
+</div>
+
+<!-- BlueCorss -->
+<div>
+<div class="company c1">BlueCorss Laboratories Limited </div>
+<div class="products">
+<ul>
+<li>Angicam 5mg Tablet – antihypertensive medicine</li>
+<li>Angicam Beta Tablet – cardiovascular medicine</li>
+<li>Angicam H Tablet – antihypertensive medicine</li>
+<li>Antiban 75 Tablet – antibiotic medicine</li>
+<li>Azibest 200mg/5ml Suspension – antibiotic medicine</li>
+<li>Azibest 250mg Tablet – antibiotic medicine</li>
+<li>Azibest 500mg Tablet – antibiotic medicine</li>
+<li>Blucef P 125mg Tablet – antibiotic medicine<li>
+<li>Blumox 500mg Tablet – antibiotic medicine</li>
+<li>Blumox CA Dry Syrup – antibiotic medicine</li>
+<li>Blumox Plus Capsule – antibiotic medicine</li>
+<li>Blumika 250mg Injection – antibiotic injection</li>
+<li>Bluvit-D3 Drops – vitamin D supplement</li>
+<li>Dolostat SP Tablet – pain & inflammation relief medicine</li>
+<li.Dolostat MR Tablet – pain & inflammation relief medicine</li>
+<li>Extacef LB Syrup – antibiotic syrup</li>
+<li>Diabiz 10mg Tablet – antidiabetic medicine</li>
+<li>K Glim M 2 Tablet – antidiabetic combination medicine</li>
+<li>Kolq Syrup – cough & cold relief medicine</li>
+<li>Tusq-D Lozenges – cough relief medicine</li>
+</ul>
+</div>
+</div>
+
+<!-- Aristo -->
+<div>
+<div class="company c2">Aristo Pharmaceuticals LImited</div>
+<div class="products">
+<ul>
+<li>Aristatin 20mg Tablet – cholesterol / cardiovascular medicine</li>
+<li>Ambrodil Syrup – cough & cold relief syrup</li>
+<li>Ambrodil Tablet – respiratory medicine</li>
+<li>Ambrodil-D Syrup Sugar Free – cough relief sugar-free syrup</li>
+<li>Ambrodil-LS Oral Drops – cough relief drops</li>
+<li>Ambrodil-XP Capsule – respiratory relief capsule</li>
+<li>Amlochol 2.5mg/10mg Tablet – cardiovascular medicine</li>
+<li>Amlochol 5mg/10mg Tablet – cardiovascular medicine</li>
+<li>Amlosafe 2.5 Tablet – antihypertensive medicine</li>
+<li>Amlosafe MT 50 Tablet – antihypertensive combination</li>
+<li>Aristo Febu 80 Tablet – gout medicine (febuxostat)</li>
+<li>Aristo Immugard Capsule – immune support supplement</li>
+<li>Aristo Misotrax Tablet – gastrointestinal medicine</li>
+<li>Aristocillin 100mg Drop – pediatric antibiotic drop</li>
+<li>Aristoderm GM Cream – dermatology cream</li>
+<li>Aristogyl 200mg Tablet – pain & inflammation medicine</li>
+<li>Aristomol 500mg Tablet – analgesic/antipyretic</li>
+<li>Aristomol 250mg/5ml Oral Suspension – pediatric pain/fever syrup</li>
+<li>Aristomox CV 1000mg/200mg Injection – broad-spectrum antibiotic injection<>/li>
+<li>Aristozyme (Diastase & Pepsin Liquid) – digestive enzyme aid</li>
+</ul>
+</div>
+</div>
+
+<!-- FDC -->
+<div>
+<div class="company c1">FDC Limited</div>
+<div class="products">
+<ul>
+<li>Zifi (200, 100 DT, 50 DT, 100 Dry Syrup - Antibacterial)</li>
+<li>Electral (Powder/Ready-to-Drink Orange/Mango - Oral Rehydration)</li>
+<li>Enerzal (Powder/Liquid, Orange/Lime - Electrolyte Drink)</li>
+<li>Vitcofol (Capsule/Syrup/Injection - Vitamin Supplement)</li>
+<li>Zocon (150 mg Tablets/Dusting Powder - Antifungal)</li>
+<li>Zipod (200 Tablet - Antibacterial)</li>
+<li>Pilocar (2% Eye Drops - Antiglaucoma)</li>
+<li>Cotaryl (3d Cream/Cream - Dermatological Moisturizer)</li>
+<li>Moisol (Eye Drops/Z Eye Drops - Lubricant)</li>
+<li>Amodep AT (Tablet - Anti-hypertensive)</li>
+</ul>
+</div>
+</div>
+
+
+<!-- Merck  -->
+<div>
+<div class="company c2">Merck Specialities Limited</div>
+<div class="products">
+<ul>
+<li>Carbophage XR 500/1000 (Metformin Hydrochloride) - Used for managing type 2 diabetes.</li>
+<li>Concor 5/10 mg (Bisoprolol Fumarate) - Used to treat high blood pressure and heart-related conditions.</li>
+<li>Seven Seas Original Cod-Liver Oil Capsules - Nutritional supplement for immunity and joint health.</li>
+<li>Neurobion Forte (Vitamin B12, B6, B1) - Vitamin supplement for nerve health.</li>
+<li>Uthyrox 100mcg (Levothyroxine) - Used for thyroid hormone replacement.</li>
+<li>Clobetamil M Cream/Ointment - Topical antifungal and steroid medication.</li>
+<li>Evion 400mg Capsule (Vitamin E) - Antioxidant supplement for skin and hair.</li>
+<li>Polyion D Syrup - Vitamin supplement, often used for bone health.</li>
+<li>Starvog M 0.3 Tablet SR - Combination therapy for type 2 diabetes management.</li>
+<li>Erbitux 500mg Infusion - Targeted cancer therapy (monoclonal antibody).</li>
+</ul>
+</div>
+</div>
+
+<!-- Aimil -->
+<div>
+<div class="company c1">Aimil Pharmaceuticals Limited</div>
+<div class="products">
+<ul>
+<li>Amlycure D.S. (Syrup/Capsule): Used for liver health and to improve liver function.</li>
+<li>Neeri (Syrup/Tablet): Used for urinary tract infections (UTIs) and to support kidney function.</li>
+<li>BGR-34 (Tablet): Used for managing blood glucose levels (diabetes).</li>
+<li>Amroid (Tablet/Ointment): Used for the treatment of piles (hemorrhoids) and to manage pain/bleeding.</li>
+<li>Muscalt Forte (Tablet/Oil/Syrup): Used for joint pain, inflammation, and arthritis.</li>
+<li>Amycordial (Syrup/Tablet): A tonic for women's health to manage hormonal balance and gynecological issues.</li>
+<li>Amyron (Syrup/Tablet): A health supplement for iron deficiency, anemia, and general fatigue.</li>
+<li>Lukoskin (Oral Liquid/Ointment): Used for the treatment of leucoderma (vitiligo).</li>
+<li>Jufex Forte (Syrup/Lozenges): A herbal formula for cough and cold management.</li>
+<li>Amydio Forte (Syrup/Capsule): A liver tonic that aids in metabolism and detoxification.</li>
+</ul>
+</div>
+</div>
+
+<!-- P&G -->
+<div>
+<div class="company c2">P&G Healths Limited</div>
+<div class="products">
+<ul>
+<li>Neurobion Forte: Vitamin B12, B1, B6 tablets for nerve health.</li>
+<li>Neurobion Forte RF Injection: Used for treating B-vitamin deficiencies.</li>
+<li>Neurobion Plus Tablet/Injection: Enhanced formulation for nerve repair.</li>
+<li>Evion 400 mg Capsule: Vitamin E brand for immunity and skin health.</li>
+<li>Evion Forte Capsule: Advanced formulation.</li>
+<li>Evion Cream: Topical cream with Aloe Vera & Vitamin E.</li>
+<li>Evion LC Tablet/Capsule: Liver health and antioxidant formula.</li> 
+<li>Livogen-XT Tablets: Iron, Folic Acid, and Zinc for anemia.</li>
+<li>Livogen-Z Captab: Iron, Folic Acid, and Zinc for immunity</li>
+<li>Nasivion Classic Nasal Spray: Fast-acting relief for blocked nose.</li>
+<li>Nasivion Mini Baby 0.01%: For infants.</li>
+<li>Nasivion Pediatric Drops 0.025%: For children.</li>
+<li>Nasivion Care Nasal Drops: Saline solution for nasal hygiene.</li>  
+<li>Polybion Active Syrup: Sugar-free B-complex with Lysine (Mango flavor).</li>
+<li>Polybion Lc Syrup: B-complex for appetite and energy.</li>
+<li>Polybion CZS: Vitamin B12, Zinc, and Selenium. </li>
+<li>Betamil GM Cream: Topical anti-inflammatory/antibacterial cream.</li>
+<li>Clotetamil-G Cream: Topical antifungal/steroid cream.</li>
+<li>Lipigo (Rosuvastatin): Cholesterol-lowering drug</li>
+</ul>
+</div>
+</div>
+
+<!--Gelmek-->
+<div>
+<div class="company c1">Gelmek Healthcare Limited</div>
+<div class="products">
+<ul>
+<li>Gelvion-D3 Tablet: Vitamin D3 supplement.</li>
+<li>Mekvit Plus Softgel Capsule: Ginseng with multivitamin and multimineral.</li>
+<li>Zinkomek Syrup: Nutritional supplement.</li>
+<li>Cyclomek-SP Tablet: Aceclofenac, Paracetamol, and Serratiopeptidase.</li>
+<li>Glimek-M Tablet: Antidiabetic formulation.</li>
+<li>Foscotrip Orange Flavour Oral Powder: Sachet format.</li>
+<li>Mekxim-LB 200 Tablet: Antibiotic with probiotic.</li>
+<li>Cefuwald-500 Tab: Antibiotic.</li>
+<li>Coxiwald-90 Tab: Anti-inflammatory/pain relief.</li>
+<li>ForceMek Tablets: Sildenafil Citrate.</li>
+</ul>
+</div>
+</div>
+
+<!--Corporsano-->
+<div>
+<div class="company c2">Corporsano Mediald Limited</div>
+<div class="products">
+<ul>
+<li>Nimdex SP (Aceclofenac + Paracetamol + Serratiopeptidase) - Tablet for pain</li>
+<li>Enovate GM Neo - Cream</li>
+<li>Myozox (500mg/250mg) - Tablet</li>
+<li>Nimdex Cold Plus - Tablet</li>
+<li>Nimesulide 100 mg - Mouth Dissolving Tablets
+<li>Aceclofenac 100 mg + Paracetamol 325 mg - Tablets</li>
+<li>Mefenamic acid 250 mg + Dicyclomine Hcl 10mg - Tablet</li>
+<li>Cetirizine Hcl 5 Mg + Ambroxol Hcl 30 Mg - Syrup</li>
+<li>Levocetirizine 5 mg + Montelukast 10 mg - Tablets</li>
+<li>Paracetamol 250 mg + Mefenamic Acid 100 mg/5 ml - Suspension</li> 
+</ul>
+</div>
+</div>
+
+<!--Neuvocare-->
+<div>
+<div class="company c1">Neuvocare Pharmaceuticals Limited</div>
+<div class="products">
+<ul>
+<li>Voot Tablet (Folic acid, Methylcobalamin, Pyridoxine)</li>
+<li>Voot Syrup (Nutritional supplement)</li>
+<li>Voot-Cal Tablet (Calcium supplement)</li>
+<li>Voot-D3 Orange Flavour Nano Drops</li>
+<li>Neorose 10mg Tablet</li>
+<li>Neuotel 5mg/10mg Tablet (Levocetirizine/Montelukast)</li>
+<li>Neuotel 15mg Tablet (For cognitive well-being)</li>
+<li>Sizzlor 120mg Capsule (Fexofenadine)</li>
+<li>Laspuma Shampoo (80 ml)</li>
+<li>Grume Tablet</li>
+<li>Lubella Cream (60 gm)</li>
+<li>Chillsun Sunscreen SPF 55 Pa++++ Lotion (200 ml)</li>
+<li>Soak IT Pre-Wash Antifungal Solution (100 ml)</li>
+<li>Voot Orange Flavour Chewable Tablet</li>
+<li>Voot Oral Drops (30 ml)</li>
+</ul>
+</div>
+</div>
+
+<!--Leben-->
+<div>
+<div class="company c2">Leben Laboratories Limited</div>
+<div class="products">
+<ul>
+<li>Aceleb-P:Aceclofenac 100mg & Paracetamol 325mg Tab.</li>
+<li>Aceleb-SP:Aceclofenac 100 mg, Paracetamol 325 mg & Serratiopeptidase 15 mg Tab.</li>
+<li>Caplofen:Diclofenac 1%, Linseed Oil 3%, Menthol 5%, Methyl Salicylate 10% & Capsaicin 0.025% Gel – 10gm & 30gm</li>
+<li>Ibut Plus:Ibuprofen + Paracetamol(Suspension – 60ml & 100ml,400mg + 325mg Tablet – 10’s Alu-Alu Blister)</li>
+<li>Kaldol-650:Paracetamol 650mg Tablets</li>
+<li>Kaldol-DS:Paracetamol Oral Suspension 250mg/5ml – 60ml</li>
+<li>Nimuben-MD:Nimesulide 100mg with β-Cyclodextrin Mouth Dissolving Tablet</li>
+<li>Nimuben-P:Nimesulide 100mg & Paracetamol 325mg</li>
+<li>Arleb-DSR:EC Rabeprazole 20 mg with SR Domperidone 30 mg Capsule</li>
+<li>DSP:Dicyclomine + Simethicon(Drops – 10ml with Dropper,Oral Suspension – 60ml)</li>
+<li>Panleb:Pantoprazole Gastro-resistant Tab. 40mg</li>
+<li>Panleb-DSR:Pantoprazole Gastro-resistant 40mg & Domperidone SR 30mg</li>
+<li>Hicoplex Syrup:Vitamin B-Complex Syrup (for Therapeutic Use)</li>
+<li>Fexoleb:Fexofenadine Hydrochloride</li>
+<li>Tussiben-LS:Levosalbutamol 1mg, Ambroxol HCl 30mg & Guaiphenesin
+<li>Canben:Clotrimazole Cream 1% w/w – 15gm</li>
+<li>Endscab:Gamma Benzene Hexachloride 1% w/v Lotion – 100ml</li>
+<li>Lulileb:Luliconazole 1% w/w Cream – 15gm & 30gm LT with PVC Tray</li>
+<li>Momson:Mometasone Furoate 0.1% w/w Cream – 15mg</li>
+<li>Momson-HT:Mometasone Furoate 0.1% w/w</li>
+<li>HCT:Disodium Hydrogen Citrate 1.25gm/5ml Syrup – 100ml</li>
+<li>Doxyben:Doxycycline 100mg Capsule – 10’s Blister</li>
+<li>Lecefix-O:Cefixime 200mg & Ofloxacin 200mg Tablet</li>
+<li>Lefpod-CV:Cefpodoxime + Potassium Clavulanate</li>
+<li>Supamox,Supamox-CV:Amoxycillin + Clavulanic Acid</li>
+</ul>
+</div>
+</div>
+
+<!--Kepler-->
+<div>
+<div class="company c1">Kepler Healthcare Limited</div>
+<div class="products">
+<ul>
+<li>Solvin (Cold/Cough): Various formulations for respiratory relief.</li>
+<li>Nasoclear (Nasal Solution): Saline nasal spray for nasal congestion.</li>
+<li>Montikep LC (Tablet): Used for allergies and respiratory issues.</li>
+<li>Ccbest 10mg/20mg/M/T (Tablet): Cardiovascular medication, often containing Cilnidipine.</li>
+<li>Itler 100mg/200mg (Capsule): Antifungal medication.</li>
+<li>Kep-X Syrup/Drops (Cough Syrup): Cough management products.</li>
+<li>Admol 650 mg (Tablet): Paracetamol for pain and fever.</li>
+<li>Lactobrain Sachet (Nutraceutical): Probiotic for gut health.</li>
+<li>Amokav 625/250/Duo (Antibiotic): Amoxicillin and Potassium Clavulanate.</li>
+<lihut kadhu ka>Miloxir 5% Pro F (Solution): Hair care/growth topical solution</li>
+</ul>
+</div>
+</div>
+
+<!--Lloyd Healthcare -->
+<div>
+<div class="company c2">Lloyd Healthcare Limited</div>
+<div class="products">
+<ul>
+<li>LoyD3 60K Softgel Capsule (Vitamin D3)</li>
+<li>Glitaray M Series (Glitara M 1 Forte, Glitaray M 2, Glitaray M 3, etc. - Metformin + Glimepiride)</li>
+<li>Bylenta Series (Bylenta 20/40, Bylenta M, Bylenta LN - Olmesartan/Azilsartan-based antihypertensives)</li>
+<li>Cilidin Series (Cilidin 10, Cilidin 5, Cilidin TM - Cilnidipine-based antihypertensives)</li>
+<li>Gzor Series (Gzor DM, Gzor SM, Gzor M - Antidiabetics)</li>
+<li>M-Strong Series (M-Strong PG, M-Strong Softgel, M-Strong CS - Nutritional supplements)</li>
+<li>Vildaray M OD/SR (Vildagliptin + Metformin)</li>
+<li>Loyzide Series (Loyzide M, Loyzide 60mg - Anti-diabetic)</li>
+<li>D-Chole 60K Softgel Capsule (Vitamin D3)</li>
+<li>Linaray DM/M Forte (Diabetes management)</li>
+<li>Bisozox D Tablet (Cardiovascular)</li>
+<li>Ticaloy 90 mg Tablet (Cardiovascular)</li>
+<li>Loy-CTN 2.6 Tablet (Cardiovascular)</li>
+<li>L-Panto-D 30mg/40mg Capsule (PPI for acidity)</li>
+<li>Sugaray GM Series (Antidiabetic)</li>
+</ul>
+</div>
+</div>
+
+<!--Ojas -->
+<div>
+<div class="company c1">Ojas Life Care Limited</div>
+<div class="products">
+<ul>
+<li>Jaspan DSR (Pantoprazole 40mg + Domperidone 30mg) Capsules: Used for treating acidity and GERD.</li>
+<li>BMD FIT (Calcium Citrate Maleate + Vit D3) Tablets: Supplement for bone health.</li>
+<li>Ozorab DSR (Rabeprazole 20mg + Domperidone 30mg) Capsule: Used for acid reflux and indigestion.</li>
+<li>Trace TH (Aceclofenac + Thiocolchicoside) Tablets: Muscle relaxant and pain-relieving medication.</li>
+<li>Orox XT (Ferrous Ascorbate) Tablet: Used for iron deficiency and anemia.</li>
+<li>(Ozokuff): Cold and flu medication for pain and congestion.</li>
+<li>Ozokuff LS Syrup: Used for treating cough and respiratory congestion.</li>
+<li>Nervofixx D Tablet: Used for managing neuropathic pain and nerve health.</li>
+<li>Trace-P: Aceclofenac and Paracetamol tablets for pain relief.</li>
+<li>iONIM-SP: Anti-inflammatory tablet for orthopedic pain.</li>
+</ul>
+</div>
+</div>
+
+<!--Bestochem -->
+<div>
+<div class="company c2">Bestochem Formulations Limited</div>
+<div class="products">
+<ul>
+<li>Aceclobest (Series): Aceclobest Plus Tablet and Suspension (Pain Management).</li>
+<li>Bigcef (Series): Bigcef 500mg/250mg Tablets (Antibiotic).</li>
+<li>Bestogesic (Series): Bestogesic Plus Tablet, Gel, and Oil (Pain Relief).</li>
+<li>Doran-O (Series): Doran-O Tablet and Injection (Anti-emetic/Ondansetron).</li>
+<li>Sistal (Series): Sistal Forte, Sistal Forte-DS, and Sistal Plus (Anti-inflammatory/Trypsin-Chymotrypsin).</li>
+<li>Belano Ez (Capsule/Syrup): Digestive aid enzymes.</li>
+<li>Bestozinc (Tablet/Syrup): Nutritional supplement.</li>
+<li>Bestoflox 200: Ofloxacin tablet for infections.</li>
+<li>Azi Big 500: Azithromycin tablet for infections.</li>
+<li>Dezacortin 6 mg: Deflazacort tablet (Anti-inflammatory/Immunosuppressant). </li>
+</ul>
+</div>
+</div>
+
+<!--United -->
+<div>
+<div class="company c1">United pharma Limited</div>
+<div class="products">
+<ul>
+<li>Honico syrup</li>
+<li>UT-Plus capsule</li>
+<li>Karbid capsule</li>
+<li>Uniri capsule,syrup</li>
+<li>Diadis syrup</li>
+<li>Vito lotion,capsule</li>
+<li>Neemsa oil</li>
+<li>Neuroma capsule</li>
+<li>Fullnight capsule</li>
+<li>Arika capsule</li>
+<li>Mc-Care capsule</li>
+<li>Piles care capsule</li>
+<li>Unicid syrup</li>
+</ul>
+</div>
+</div>
+
+<!--Zensure-->
+<div>
+<div class="company c2">Zensure Pharma Limited</div>
+<div class="products">
+<ul>
+<li>Zengesic Sp Tablets (Aceclofenac + Paracetamol + Serratiopeptidase)</li>
+<li>Zenith CV 625 Tablets (Amoxicillin 500mg + Clavulanic Acid 125mg)</li>
+<li>Panrace 40mg Tablet (Pantoprazole)</li>
+<li>Panrace-D (Pantoprazole + Domperidone)</li>
+<li>Aforab DSR Capsule (Rabeprazole + Domperidone)</li>
+<li>Rebeprazole Sodium And Domperidon Capsule</li>
+<li>Spasmozen Tablet (Anti-spasmodic)</li>
+<li>Coldapp Tablet (Cold and cough)</li>
+<li>Zoombiotic Tablet (Antibiotic)</li>
+<li>Calda Tablet (Calcium supplement)</li>
+<li>Tab Zengesic MR (Muscle relaxant)</li>
+<li>Montelukast Levocetirizine Tablets (Anti-allergic)</li>
+</ul>
+</div>
+</div>
+
+<!--Bio Advrntia -->
+<div>
+<div class="company c1">Bio Advrntia Life Science Limited</div>
+<div class="products">
+<ul>
+<li>Fullsum-CZS Tablet – Multivitamin + Zinc supplement </li>
+<li>Pantoprazole 40 mg Tablets (Acidity medicine)</li>
+<li>Azithromycin 500 mg Tablets (Antibiotic)</li>
+<li>Paracetamol 650 mg Tablets (Fever / pain)</li>
+<li>Rabeprazole + Domperidone Capsules (Acidity / GERD)</li>
+<li>Methylcobalamin + Pregabalin Capsules (Nerve pain)</li>
+<li>Iron + Folic Acid Tablets (Anaemia supplement)</li>
+<li>Multivitamin Syrup</li>
+<li>Vitamin D3 60,000 IU Sachet</li>
+</ul>
+</div>
+</div>
+
+<!--Cygnokem-->
+<div>
+<div class="company c2">Cygnokem Pharmaceuticals Limited </div>
+<div class="products">
+<ul>
+<li>Lumiferol D3 (Vitamin D3 Drops/Syrup)</li>
+<li>Cynuron Syrup (Pharmaceutical Syrup)</li>
+<li>Fynmorn OD (Pharmaceutical Medicine/Capsule)</li>
+<li>Cynuron NT (Herbal Extract/Tablet)</li>
+<li>RB Clare Max (Pharmaceutical Medicine)</li>
+<li>Lumiferol DE (Pharmaceutical Syrup)</li>
+<li>Torcylix D (Pharmaceutical Syrup)</li>
+<li>Cynuron 4G (Herbal Extract)</li>
+<li>Cynuron PG (Pharmaceutical Product)</li>
+<li>Organic Vitamin Capsules<li>
+<li>Prophylactic Treatment Services</li>
+<li>Therapeutic Healthcare Services</li>
+<li>Rebzokem O (Industrial Chemicals/Medication)</li>
+<li>Jusnine Go (Nutritional/Other)</li>
+<li>Kelvistat AC (Specialized Product)</li>
+<li>Cynuron Sy (Other Product)</li>
+<li>Generic Pharmaceutical Medicines (General listing)</li>
+</ul>
+</div>
+</div>
+
+<!--Pharmocare -->
+<div>
+<div class="company c1">Pharmocare Life Science Limited</div>
+<div class="products">
+<ul>
+<li>Tabiclave 625 LB Tablet (Amoxyclav 625) - Antibiotic</li>
+<li>Tabidoxime 200 Tablet DT - Antibiotic used for infections (bronchitis, pneumonia, etc.)</li>
+<li>Zoigest SR 200 Tablet - Progestin used to treat absence of menstrual periods and abnormal uterine bleeding</li>
+<li>Doxypharm - Antibiotic capsule/tablet</li>
+<li>Acedryl SP - Liquid cough syrup</li>
+<li>Mountyl L - Respiratory medication</li>
+<li>Vita99 - Multivitamin formula</li>
+<li>Acedryl P - Cough/cold preparation</li>
+<li>Enzodryl - Enzyme-based formulation</li>
+<li>Daily Multivitamin Softgel Capsule</li>
+</ul>
+</div>
+</div>
+
+<!--Geno-->
+<div>
+<div class="company c2">Geno Pharmaceuticals Limited</div>
+<div class="products">
+<ul>
+<li>Cypon (Syrup/Drops/Capsule): Used as an appetite stimulant.</li>
+<li>Fusigen (Ointment/Spray): Topical antibiotic for bacterial skin infections.</li>
+<li>Genopod (Tablet/Dry Syrup): Antibiotic (Cefpodoxime) for respiratory tract infections.</li>
+<li>Genomox-CV (Tablet/Syrup): Antibiotic (Amoxicillin/Clavulanic acid).</li>
+<li>Genozyme (Syrup/Capsule): Digestive enzyme formula.</li>
+</ul>
+</div>
+</div>
+
+
+</div>
+</section>
+
+<!-- ABOUT US SECTION -->
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        Devesh Distributors is committed to providing top-notch medical supplies 
+        to healthcare facilities and practitioners. We prioritize quality, 
+        reliability, and customer satisfaction. Serving various needs with 
+        precision and care.
+    </p>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services">
+    <h2>Our Services</h2>
+
+    <div class="service-box">
+        <h3>Comprehensive Medical Supplies</h3>
+        <p>Wide selection of equipment tailored to meet healthcare demands.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Timely Distribution Services</h3>
+        <p>Ensuring prompt delivery to support uninterrupted medical care.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Custom Procurement Solutions</h3>
+        <p>Adapting to unique customer needs with precision and care.</p>
+    </div>
+
+</section>
+
+<section class="gallery">
+<h2>Our Distribution Facility</h2>
+<div class="gallery-grid">
+<img src="New folder/WhatsApp Image 2026-03-28 at 4.26.38 PM (1).jpeg">
+<img src="New folder/WhatsApp Image 2026-03-28 at 4.26.38 PM (2).jpeg">
+<img src="New folder/WhatsApp Image 2026-03-28 at 4.26.38 PM (3).jpeg">
+<img src="New folder/WhatsApp Image 2026-03-28 at 4.26.38 PM (4).jpeg">
+<img src="New folder/WhatsApp Image 2026-03-28 at 4.26.38 PM.jpeg">
+</div>
+</section>
+
+<section class="map">
+<iframe src="https://maps.google.com/maps?q=Chalisgaon%20Bus%20Stand&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<p><input type="text" placeholder="Your Name" required></p>
+<p><input type="email" placeholder="Your Email" required></p>
+<p><textarea placeholder="Your Message"></textarea></p>
+<p><button type="submit">Send Message</button></p>
+</form>
+
+</section>
+
+
+<footer>
+© 2026 Devesh Distributors | All Rights Reserved
+<p>Thanks For Visiting</p>
+<p>Created by Harshal Upalkar</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917588193143" target="Welcome! How can help you? ">💬 WhatsApp</a>
+
+<script>
+const companies = document.querySelectorAll(".company");
+companies.forEach(company=>{
+    company.addEventListener("click", function(){
+        this.classList.toggle("active");
+    });
+});
+
+const searchInput = document.getElementById("searchInput");
+const companyBoxes = document.querySelectorAll(".company-grid > div");
+
+searchInput.addEventListener("keyup", function(){
+    let filter = searchInput.value.toLowerCase();
+    companyBoxes.forEach(box=>{
+        let name = box.querySelector(".company").innerText.toLowerCase();
+        box.style.display = name.includes(filter) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
